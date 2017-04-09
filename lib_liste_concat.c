@@ -55,7 +55,7 @@ void stampa_lista(struct lista_doppiamente_puntata *top)
      printf("NULL\n");
 }
 
-struct lista_doppiamente_puntata* cancella_elemento(struct lista_doppiamente_puntata *top)
+struct lista_doppiamente_puntata* cancella_elemento(struct lista_doppiamente_puntata *top, struct lista_doppiamente_puntata *head)
 {
   struct lista_doppiamente_puntata *tmp=top;
   struct lista_doppiamente_puntata *head=top;
@@ -66,9 +66,7 @@ struct lista_doppiamente_puntata* cancella_elemento(struct lista_doppiamente_pun
 
    if(top->next != NULL)
    {
-     //printf("top= %d\n", top->info );
-     //printf("\ntop->prev->next = %d", top->prev->next->info);
-     //printf("\ntop->next->prev = %d", top->next->prev->info);
+   
      top->next->prev=tmp->prev;
      top->prev->next=tmp->next;
      printf("\ntop= %d\n", top->info );
@@ -77,12 +75,12 @@ struct lista_doppiamente_puntata* cancella_elemento(struct lista_doppiamente_pun
    }
    printf("\ntop next= %d\n", top->next->info );
    printf("\ntop prev= %d\n", top->prev->info );
-        free(tmp);
+        free(top);
 
 
 
 }
 
-   return tmp;
+   return head;
 
 }
