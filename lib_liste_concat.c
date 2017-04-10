@@ -73,3 +73,22 @@ struct lista_doppiamente_puntata* cancella_elemento(struct lista_doppiamente_pun
    return head;
 
 }
+
+
+struct lista_doppiamente_puntata* unisci_liste_alternate(struct lista_doppiamente_puntata* top1, struct lista_doppiamente_puntata* top2)
+{
+
+struct lista_doppiamente_puntata* top3=NULL;
+
+   if(top1!=NULL || top2!=NULL)
+  {
+    top3=unisci_liste_alternate(top1->next,top2->next);
+    top3=Inserisci_in_testa(top3,top1->info);
+    top3=Inserisci_in_testa(top3,top2->info);
+  }
+
+
+
+return top3;
+
+}
