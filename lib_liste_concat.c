@@ -87,7 +87,7 @@ struct lista_doppiamente_puntata* top3=NULL;
     top3=Inserisci_in_testa(top3,top2->info);
   }
 
-
+// mamma
 
 return top3;
 
